@@ -1,5 +1,5 @@
 class Car:
-	
+
 	def __init__(self, route, timeCrossSensor):
 		self.route = route
 		self.timeCrossSensor = timeCrossSensor
