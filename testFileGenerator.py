@@ -55,29 +55,13 @@ class route:
 				self.nextValue = intersectionArray[self.nextValue].up if l else intersectionArray[self.nextValue].right								
 
 intersectionArray = [None]*9
-intersectionArray[0] = intersectionForTestSuite(0)
-intersectionArray[1] = intersectionForTestSuite(1)
-intersectionArray[2] = intersectionForTestSuite(2)
-intersectionArray[3] = intersectionForTestSuite(3)
-intersectionArray[4] = intersectionForTestSuite(4)
-intersectionArray[5] = intersectionForTestSuite(5)
-intersectionArray[6] = intersectionForTestSuite(6)
-intersectionArray[7] = intersectionForTestSuite(7)
-intersectionArray[8] = intersectionForTestSuite(8)
+for i in range (0,9):
+	intersectionArray[i] = intersectionForTestSuite(i)
 
 startingPointArray = [[None,None,None],[None,None,None],[None,None,None],[None,None,None]]
-startingPointArray[0][0] = startingPoint(intersectionArray[0])
-startingPointArray[0][1] = startingPoint(intersectionArray[1])
-startingPointArray[0][2] = startingPoint(intersectionArray[2])
-startingPointArray[1][0] = startingPoint(intersectionArray[2])
-startingPointArray[1][1] = startingPoint(intersectionArray[5])
-startingPointArray[1][2] = startingPoint(intersectionArray[8])
-startingPointArray[2][0] = startingPoint(intersectionArray[6])
-startingPointArray[2][1] = startingPoint(intersectionArray[7])
-startingPointArray[2][2] = startingPoint(intersectionArray[8])
-startingPointArray[3][0] = startingPoint(intersectionArray[0])
-startingPointArray[3][1] = startingPoint(intersectionArray[3])
-startingPointArray[3][2] = startingPoint(intersectionArray[6])
+for i in range (0,4):
+	for j in range(0,3):
+		startingPointArray[i][j] = startingPoint(intersectionArray[((i*(i+1)) if (i*(i+1))<12 else 0) + j * (3 if (i % 2) else 1)])
 
 r = routeGenerator()
 r.generate(100,0.3)
