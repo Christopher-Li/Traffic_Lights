@@ -25,7 +25,7 @@ class carLL:
 		self.tail = None
 		self.length = length
 
-	def append(self, speed, route):
+	def append(self, speed):
 		carItem = carClass.car(speed,route,self.length)
 		if self.head == None:
 			self.head = self.tail = carItem

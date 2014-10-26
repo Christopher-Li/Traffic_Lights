@@ -1,6 +1,9 @@
 import carClass
 import carLLClass
 
+LENGTH = 15.0
+
+
 class intersection:
 	# Documentation
 	#
@@ -9,11 +12,12 @@ class intersection:
 	# nextImportantTime() = returns the next important time in the intersection. Returns 0 there are no cars.
 	# incrementDistance() = takes change and time and increments all cars in all lanes by that time.
 	# determineLight() = takes scores of ns and ew lanes and determines which light should be shown
+	#					 returns True if light has changed and False if light has not changed
 
 
 	def __init__(self):
 		for i in range(4):
-			lanes[0] = carLLClass.carLL()
+			self.lanes[0] = carLLClass.carLL(LENGTH)
 		self.lightIsNS = True
 
 	def nextImportantTime(self):
@@ -57,7 +61,10 @@ class intersection:
 			lightIsNS = False
 			return True
 
-
+	def printLanes(self):
+		for i in range(4):
+			print "lane# ", i, "\n"
+			lanes[0].printLL()
 
 
 
