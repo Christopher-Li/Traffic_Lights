@@ -16,8 +16,9 @@ class intersection:
 
 
 	def __init__(self):
+		self.lanes = [None] * 4
 		for i in range(4):
-			self.lanes[0] = carLLClass.carLL(LENGTH)
+			self.lanes[i] = carLLClass.carLL(LENGTH)
 		self.lightIsNS = True
 
 	def nextImportantTime(self):
