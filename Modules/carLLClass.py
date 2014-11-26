@@ -15,6 +15,8 @@ class carLL:
 	#						CARLENGTH, and only one car can go through the intersection.
 	# nextImportantTime() = returns the time until the next car will cross the intersection or is 1 second
 	#						away from the light. Returns 0 if the LinkedList is empty.
+	# isEmpty() = returns a boolean. True if the Linked List is empty, 
+	#			  and False is the Linked List contains values
 
 	###### Testing ######
 	# printLL() = prints every element in the LinkedList
@@ -101,6 +103,12 @@ class carLL:
 		else:
 			return timeCrossIntersection
 
+	def isEmpty(self):
+		if self.head:
+			return False
+		else:
+			return True
+
 	def printLL(self):
 		print "printing list"
 		if self.head == None:
@@ -110,5 +118,6 @@ class carLL:
 		while temp != None:
 			print "Speed: " , temp.speed , "\tRoute:" , temp.route, "\tDistance: " , temp.distance
 			temp = temp.next
+
 
 

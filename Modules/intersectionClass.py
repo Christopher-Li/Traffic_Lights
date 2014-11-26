@@ -15,6 +15,10 @@ class intersection:
 	#					 returns True if light has changed and False if light has not changed
 	# addCar() = takes a speed, route and laneNumber and appends the car into the lane corresponding to the lane
 	#			 number.
+	# isEmpty() = returns a boolean.
+
+	######### Testing #########
+	# printLL() = prints every car in every lane
 
 
 	def __init__(self):
@@ -69,6 +73,10 @@ class intersection:
 		self.lanes[laneNumber].append(speed, route)
 
 	def printLanes(self):
+		if self.lightIsNS:
+			print "NS LIGHT IS ON"
+		else:
+			print "EW LIGHT IS ON"
 		for i in range(4):
 			print "lane# ", i
 			self.lanes[i].printLL()

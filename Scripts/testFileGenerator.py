@@ -8,7 +8,7 @@ class routeGenerator:
 		f = open(file_full_name,'w')
 		for i in range(1,total):
 			self.time += random.randint(0,2) * spread
-			self.stringToWrite = str(self.time) + ' ' + route().routeData + '\n'
+			self.stringToWrite = str(self.time) + ' ' + str(float(random.randint(1,8))/2) + ' ' + route().routeData + '\n'
 			print(self.stringToWrite)
 			f.write(str(self.stringToWrite))
 		f.close()
